@@ -1,0 +1,7 @@
+[build]
+  publish = "public"
+  command = "zola build"
+
+[build.environment]
+  NIXPACKS_JUVIX_ZOLA = "true"
+
