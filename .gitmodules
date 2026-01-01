@@ -1,0 +1,3 @@
+[submodule "themes/neovim-theme"]
+	path = themes/neovim-theme
+	url = git@github.com:dontreadthisline/neovim-theme.git
