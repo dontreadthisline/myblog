@@ -1,5 +1,5 @@
 +++
-title = "Getting Started"
+title = "博客示例"
 date = 2026-01-01
 draft = false
 +++
