@@ -11,16 +11,16 @@ draft = false
 
 ## 编程基础
 
-### OSR:基于C语言的RISCV模拟器
+### OSR: Open Street Router
 
-- [项目链接](https://nju-projectn.github.io/ics-pa-gitbook/ics2025/index.html)
+- [项目链接](https://github.com/motis-project/osr)
 - 介绍:
 - 进度:
 - 收获:
 
-### 南大操作系统原理
+### MiniOB 教学性质的数据库内核实现
 
-- [课程链接](https://jyywiki.cn/OS/2025/)
+- [课程链接](https://github.com/oceanbase/miniob)
 - 介绍:
 - 进度:
 - 收获:
