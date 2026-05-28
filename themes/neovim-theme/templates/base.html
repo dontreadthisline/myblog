@@ -33,6 +33,9 @@
   <body onkeydown='exec(event)' style='background-image: url("/assets/background.jpg");'>
     {%- endif -%}
     <main>
+      {%- if section and section.path == "/" -%}
+      {%- set page = get_page(path="readme.md") -%}
+      {%- endif -%}
       <div class="files" id="files" tabindex="0">
         {%- include "components/files.html" -%}
       </div>
