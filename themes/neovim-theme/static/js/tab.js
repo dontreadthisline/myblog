@@ -35,7 +35,9 @@ function del_tab(event) {
   const element = document.getElementById("tabs");
   let a;
   if (!event) {
-    a = element.getElementsByClassName("selected")[0].firstElementChild;
+    const sel = element.getElementsByClassName("selected")[0];
+    if (!sel) return;
+    a = sel.firstElementChild;
   } else {
     a = event.target.previousElementSibling;
   }
@@ -57,9 +59,21 @@ function del_tab(event) {
   }
 }
 
+function prev_tab() {
+  const element = document.getElementById("tabs");
+  const a = element.getElementsByClassName("selected")[0];
+  if (!a) return;
+  const prev = a.previousElementSibling;
+  const url = prev
+    ? prev.firstElementChild.href
+    : element.lastElementChild.firstElementChild.href;
+  window.location.href = url;
+}
+
 function next_tab() {
   const element = document.getElementById("tabs");
   const a = element.getElementsByClassName("selected")[0];
+  if (!a) return;
 
   const previous_element = a.previousElementSibling;
   const next_element = a.nextElementSibling;

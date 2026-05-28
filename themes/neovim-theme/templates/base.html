@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ config.extra.blog_name }}</title>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"
-    integrity="sha256-WCzAhd2P6gRJF9Hv3oOOd+hFJi/QJbv+Azn4CGB8gfY=" crossorigin="anonymous" defer></script>
+  <script src="/js/js.cookie.min.js" defer></script>
   <script src="/js/index.js" defer></script>
   <script src="/js/prompt.js" defer></script>
   <script src="/js/keyboard.js" defer></script>
@@ -21,7 +20,7 @@
   {%- if config.extra.custom_css -%}
   <link rel="stylesheet" href="{{ config.extra.custom_css }}">
   {%- endif -%}
-  {%- if page -%}
+  {%- if page or section.path == "/" -%}
   <link rel="stylesheet" href="/css/page.css">
   {%- endif -%}
 </head>
@@ -37,7 +36,7 @@
       <div class="files" id="files" tabindex="0">
         {%- include "components/files.html" -%}
       </div>
-      <div class="viewer {% if page -%}page{%- endif -%}" id="viewer" tabindex="0">
+      <div class="viewer {% if page or section.path == "/" -%}page{%- endif -%}" id="viewer" tabindex="0">
         <div class="tab">
           {%- include "components/tab.html" -%}
         </div>

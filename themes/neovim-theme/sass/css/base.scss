@@ -11,7 +11,7 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #dc8add var(--bg-color);
+  scrollbar-color: #82aaff var(--bg-color);
 }
 
 html {
@@ -30,7 +30,7 @@ body {
 @media only screen and (max-width: 768px) {
   .viewer {
     position: relative;
-    overflow: scroll !important;
+    overflow: auto !important;
     height: fit-content !important;
 
     .tab>ul {
@@ -100,10 +100,10 @@ body {
     position: sticky;
     top: 0;
     width: calc(20% - 10px);
-    height: calc(100% - 58px);
+    height: 100%;
 
     box-shadow: 3px 0px 0px 0px var(--font-color);
-    overflow-x: scroll;
+    overflow-x: auto;
   }
   
   .file-manager {
@@ -144,14 +144,14 @@ main {
   }
 
   .viewer {
-    height: calc(100% - 58px);
+    height: 100%;
     overflow: clip;
 
     .content {
       text-wrap: balance;
       padding-left: 20px;
       height: calc(100% - 23px);
-      overflow-y: scroll;
+      overflow-y: auto;
       overflow-x: clip;
       margin-top: 3px;
 
@@ -311,9 +311,7 @@ main {
 
   .files {
     text-wrap: nowrap;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    padding-left: 10px;
+    overflow-x: auto;
     padding-top: 15px;
 
     ul:not(:empty) {
@@ -341,22 +339,22 @@ main {
   }
 
   .prompt {
+    display: none !important;
     position: relative;
     bottom: 0;
-    height: 55px;
+    height: 30px;
     box-shadow: 0px -3px 0px 0px var(--font-color);
 
     font-size: 10px;
-    display: inline-flex;
     width: 100%;
     align-content: center;
 
     .cursor {
       opacity: 0.6;
-      width: 15px;
+      width: 12px;
       background-color: #fff;
-      margin-top: 2ex;
-      margin-bottom: 2ex;
+      margin-top: 1ex;
+      margin-bottom: 1ex;
       position: relative;
       display: none;
     }
@@ -377,4 +375,78 @@ main {
 
 footer>p {
   margin-bottom: 0;
+}
+
+#whichkey {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 999;
+  pointer-events: none;
+
+  .wk-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 32px;
+    padding: 16px 24px;
+    pointer-events: auto;
+    background: rgba(44, 44, 58, 0.72);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(130, 170, 255, 0.15);
+    border-radius: 8px;
+    max-width: 75vw;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  .wk-group {
+    min-width: 200px;
+  }
+
+  .wk-group-name {
+    color: #82aaff;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(130, 170, 255, 0.25);
+  }
+
+  .wk-row {
+    display: flex;
+    gap: 12px;
+    padding: 2px 0;
+    font-size: 0.9em;
+  }
+
+  .wk-key {
+    color: #ffc777;
+    min-width: 5em;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .wk-desc {
+    color: #cdd6f4;
+  }
+
+  .wk-footer {
+    width: 100%;
+    text-align: center;
+    color: rgba(205, 214, 244, 0.4);
+    font-size: 0.8em;
+    padding-top: 8px;
+    border-top: 1px solid rgba(130, 170, 255, 0.15);
+  }
+}
+
+main.files-collapsed {
+  .files {
+    display: none !important;
+  }
+  .viewer {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
 }
