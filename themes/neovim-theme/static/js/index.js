@@ -8,6 +8,7 @@ async function init() {
 
   const default_config = {
     mouse: true,
+    theme: "default",
   };
   if (!Cookies.get("config"))
     Cookies.set("config", JSON.stringify(default_config));

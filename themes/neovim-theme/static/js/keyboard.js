@@ -1,3 +1,36 @@
+const themeNames = ["default", "catppuccin", "tokyonight", "rosepine", "everforest", "gruvbox", "nord"];
+
+function cycle_theme(delta) {
+  const config = JSON.parse(Cookies.get("config"));
+  const cur = config.theme || "default";
+  let idx = themeNames.indexOf(cur);
+  if (idx === -1) idx = 0;
+  idx = (idx + delta + themeNames.length) % themeNames.length;
+  const next = themeNames[idx];
+  config.theme = next;
+  Cookies.set("config", JSON.stringify(config));
+  document.documentElement.setAttribute("data-theme", next);
+  show_notification("theme: " + next);
+}
+
+function show_notification(msg) {
+  let el = document.getElementById("notify");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "notify";
+    el.style.cssText =
+      "position:fixed;top:12px;right:12px;z-index:9999;padding:8px 16px;" +
+      "background:var(--whichkey-bg);color:var(--accent);" +
+      "border:1px solid var(--border-dim);border-radius:6px;" +
+      "font-size:0.85em;pointer-events:none;transition:opacity 0.3s;";
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.style.opacity = "1";
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => { el.style.opacity = "0"; }, 1500);
+}
+
 const whichkey = [
   {
     group: "Navigation",
@@ -27,6 +60,13 @@ const whichkey = [
       ["Ctrl+h", "Focus files panel"],
       ["Ctrl+l", "Focus viewer panel"],
       ["Space e", "Toggle files panel"],
+    ],
+  },
+  {
+    group: "Themes",
+    keys: [
+      ["Space t", "Next theme"],
+      ["Space T", "Prev theme"],
     ],
   },
 ];
@@ -104,6 +144,11 @@ function exec(event) {
     if (key === "e") {
       event.preventDefault();
       document.querySelector("main").classList.toggle("files-collapsed");
+      return;
+    }
+    if (key === "t") {
+      event.preventDefault();
+      cycle_theme(event.shiftKey ? -1 : 1);
       return;
     }
     // non-leader key: cancel leader mode, fall through to normal handling

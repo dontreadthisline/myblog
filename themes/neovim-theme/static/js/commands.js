@@ -51,8 +51,6 @@ function set(args) {
 
   if (value == "true" || value == "false") {
     value = value == "true" ? true : false;
-  } else {
-    return error;
   }
 
   let config = JSON.parse(Cookies.get("config"));

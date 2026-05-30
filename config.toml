@@ -12,3 +12,4 @@ build_search_index = false
 # set the name of the blog
 blog_name = "yinbingshi"
 background_image = "/assets/background.jpg"
+default_theme = "everforest"

@@ -9,6 +9,10 @@ function exec_config() {
         html.style = value ? "" : "cursor:none;pointer-events:none;";
         break;
 
+      case "theme":
+        document.documentElement.setAttribute("data-theme", value);
+        break;
+
       default:
     }
   });

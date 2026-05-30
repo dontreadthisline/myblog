@@ -3,19 +3,178 @@
   src: url("/JetBrainsMonoNLNerdFont-Regular.ttf");
 }
 
+/* ===== Theme Variables ===== */
 :root {
-  --bg-color: rgba(32, 32, 42, 0.8);
-  --font-color: #cdd6f4;
+  --bg: rgba(32, 32, 42, 0.8);
+  --bg-solid: #20202a;
+  --fg: #cdd6f4;
+  --fg-dim: rgba(205, 214, 244, 0.5);
+  --fg-dimmer: rgba(205, 214, 244, 0.4);
+  --accent: #82aaff;
+  --accent2: #ffc777;
+  --accent3: #c3e88d;
+  --accent4: #b7c2fd;
+  --code-bg: rgba(183, 194, 253, 0.25);
+  --code-fg: #b7c2fd;
+  --pre-bg: rgba(32, 32, 42, 0.8);
+  --blockquote-bar: #82aaff;
+  --blockquote-bg: rgba(32, 32, 42, 0.8);
+  --border: #cdd6f4;
+  --border-dim: rgba(130, 170, 255, 0.15);
+  --border-dim-solid: rgba(130, 170, 255, 0.25);
+  --selected-bg: rgba(66, 135, 245, 0.5);
+  --scrollbar: #82aaff;
+  --whichkey-bg: rgba(44, 44, 58, 0.72);
 }
+
+[data-theme="catppuccin"] {
+  --bg: rgba(30, 30, 46, 0.82);
+  --bg-solid: #1e1e2e;
+  --fg: #cdd6f4;
+  --fg-dim: rgba(205, 214, 244, 0.5);
+  --fg-dimmer: rgba(205, 214, 244, 0.4);
+  --accent: #89b4fa;
+  --accent2: #f9e2af;
+  --accent3: #a6e3a1;
+  --accent4: #b4befe;
+  --code-bg: rgba(180, 190, 254, 0.18);
+  --code-fg: #b4befe;
+  --pre-bg: rgba(24, 24, 37, 0.7);
+  --blockquote-bar: #89b4fa;
+  --blockquote-bg: rgba(24, 24, 37, 0.7);
+  --border: #cdd6f4;
+  --border-dim: rgba(137, 180, 250, 0.15);
+  --border-dim-solid: rgba(137, 180, 250, 0.25);
+  --selected-bg: rgba(137, 180, 250, 0.35);
+  --scrollbar: #89b4fa;
+  --whichkey-bg: rgba(24, 24, 37, 0.78);
+}
+
+[data-theme="tokyonight"] {
+  --bg: rgba(26, 27, 38, 0.84);
+  --bg-solid: #1a1b26;
+  --fg: #c0caf5;
+  --fg-dim: rgba(192, 202, 245, 0.5);
+  --fg-dimmer: rgba(192, 202, 245, 0.4);
+  --accent: #7aa2f7;
+  --accent2: #e0af68;
+  --accent3: #9ece6a;
+  --accent4: #bb9af7;
+  --code-bg: rgba(187, 154, 247, 0.18);
+  --code-fg: #bb9af7;
+  --pre-bg: rgba(21, 22, 30, 0.7);
+  --blockquote-bar: #7aa2f7;
+  --blockquote-bg: rgba(21, 22, 30, 0.7);
+  --border: #c0caf5;
+  --border-dim: rgba(122, 162, 247, 0.15);
+  --border-dim-solid: rgba(122, 162, 247, 0.25);
+  --selected-bg: rgba(122, 162, 247, 0.35);
+  --scrollbar: #7aa2f7;
+  --whichkey-bg: rgba(21, 22, 30, 0.78);
+}
+
+[data-theme="rosepine"] {
+  --bg: rgba(25, 23, 36, 0.82);
+  --bg-solid: #191724;
+  --fg: #e0def4;
+  --fg-dim: rgba(224, 222, 244, 0.5);
+  --fg-dimmer: rgba(224, 222, 244, 0.4);
+  --accent: #31748f;
+  --accent2: #f6c177;
+  --accent3: #9ccfd8;
+  --accent4: #ebbcba;
+  --code-bg: rgba(235, 188, 186, 0.18);
+  --code-fg: #ebbcba;
+  --pre-bg: rgba(20, 18, 29, 0.7);
+  --blockquote-bar: #31748f;
+  --blockquote-bg: rgba(20, 18, 29, 0.7);
+  --border: #e0def4;
+  --border-dim: rgba(49, 116, 143, 0.15);
+  --border-dim-solid: rgba(49, 116, 143, 0.25);
+  --selected-bg: rgba(49, 116, 143, 0.35);
+  --scrollbar: #31748f;
+  --whichkey-bg: rgba(20, 18, 29, 0.78);
+}
+
+[data-theme="everforest"] {
+  --bg: rgba(39, 43, 40, 0.84);
+  --bg-solid: #272b28;
+  --fg: #d3c6aa;
+  --fg-dim: rgba(211, 198, 170, 0.5);
+  --fg-dimmer: rgba(211, 198, 170, 0.4);
+  --accent: #7fbbb3;
+  --accent2: #dbbc7f;
+  --accent3: #a7c080;
+  --accent4: #e69875;
+  --code-bg: rgba(230, 152, 117, 0.18);
+  --code-fg: #e69875;
+  --pre-bg: rgba(29, 33, 30, 0.7);
+  --blockquote-bar: #7fbbb3;
+  --blockquote-bg: rgba(29, 33, 30, 0.7);
+  --border: #d3c6aa;
+  --border-dim: rgba(127, 187, 179, 0.15);
+  --border-dim-solid: rgba(127, 187, 179, 0.25);
+  --selected-bg: rgba(127, 187, 179, 0.35);
+  --scrollbar: #7fbbb3;
+  --whichkey-bg: rgba(29, 33, 30, 0.78);
+}
+
+[data-theme="gruvbox"] {
+  --bg: rgba(40, 40, 40, 0.84);
+  --bg-solid: #282828;
+  --fg: #ebdbb2;
+  --fg-dim: rgba(235, 219, 178, 0.5);
+  --fg-dimmer: rgba(235, 219, 178, 0.4);
+  --accent: #83a598;
+  --accent2: #fabd2f;
+  --accent3: #b8bb26;
+  --accent4: #d3869b;
+  --code-bg: rgba(211, 134, 155, 0.18);
+  --code-fg: #d3869b;
+  --pre-bg: rgba(30, 30, 30, 0.7);
+  --blockquote-bar: #83a598;
+  --blockquote-bg: rgba(30, 30, 30, 0.7);
+  --border: #ebdbb2;
+  --border-dim: rgba(131, 165, 152, 0.15);
+  --border-dim-solid: rgba(131, 165, 152, 0.25);
+  --selected-bg: rgba(131, 165, 152, 0.35);
+  --scrollbar: #83a598;
+  --whichkey-bg: rgba(30, 30, 30, 0.78);
+}
+
+[data-theme="nord"] {
+  --bg: rgba(46, 52, 64, 0.84);
+  --bg-solid: #2e3440;
+  --fg: #d8dee9;
+  --fg-dim: rgba(216, 222, 233, 0.5);
+  --fg-dimmer: rgba(216, 222, 233, 0.4);
+  --accent: #81a1c1;
+  --accent2: #ebcb8b;
+  --accent3: #a3be8c;
+  --accent4: #b48ead;
+  --code-bg: rgba(180, 142, 173, 0.18);
+  --code-fg: #b48ead;
+  --pre-bg: rgba(36, 41, 51, 0.7);
+  --blockquote-bar: #81a1c1;
+  --blockquote-bg: rgba(36, 41, 51, 0.7);
+  --border: #d8dee9;
+  --border-dim: rgba(129, 161, 193, 0.15);
+  --border-dim-solid: rgba(129, 161, 193, 0.25);
+  --selected-bg: rgba(129, 161, 193, 0.35);
+  --scrollbar: #81a1c1;
+  --whichkey-bg: rgba(36, 41, 51, 0.78);
+}
+
+/* ===== Base Styles ===== */
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #82aaff var(--bg-color);
+  scrollbar-color: var(--scrollbar) var(--bg);
 }
 
 html {
-  color: var(--font-color);
+  color: var(--fg);
   font-family: JetBrainsMono;
   height: 100vh;
   width: 100vw;
@@ -40,7 +199,7 @@ body {
 
     .tab {
       height: 1.8em !important;
-      box-shadow: 0px 3px 0px 0px var(--font-color) !important;
+      box-shadow: 0px 3px 0px 0px var(--border) !important;
       position: relative;
     }
     .tab>ul>li>a {
@@ -54,7 +213,7 @@ body {
       position: absolute;
       width: 2em;
       padding-left: 0.5em;
-      box-shadow: -3px 0px 0px 0px var(--font-color);
+      box-shadow: -3px 0px 0px 0px var(--border);
       align-content: center;
       cursor: pointer;
     }
@@ -72,7 +231,7 @@ body {
 
   .files {
     display: none;
-    box-shadow: 0px 3px 0px 0px var(--font-color) !important;
+    box-shadow: 0px 3px 0px 0px var(--border) !important;
   }
 
   .close {
@@ -102,10 +261,10 @@ body {
     width: calc(20% - 10px);
     height: 100%;
 
-    box-shadow: 3px 0px 0px 0px var(--font-color);
+    box-shadow: 3px 0px 0px 0px var(--border);
     overflow-x: auto;
   }
-  
+
   .file-manager {
     display: none;
   }
@@ -123,7 +282,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: var(--bg-color);
+  background-color: var(--bg);
   backdrop-filter: blur(5px);
 
   .files {
@@ -131,7 +290,7 @@ main {
       list-style-type: none;
 
       a {
-        color: var(--font-color);
+        color: var(--fg);
         text-decoration: none;
         display: inline;
       }
@@ -139,7 +298,7 @@ main {
 
     a:hover,
     .selected {
-      background-color: rgba(66, 135, 245, 0.5) !important;
+      background-color: var(--selected-bg) !important;
     }
   }
 
@@ -157,7 +316,7 @@ main {
 
       a:hover,
       .selected {
-        background-color: rgba(66, 135, 245, 0.5) !important;
+        background-color: var(--selected-bg) !important;
       }
 
       img {
@@ -167,14 +326,14 @@ main {
       }
 
       pre{
-        background-color: var(--bg-color) !important;
+        background-color: var(--pre-bg) !important;
         padding: 10px;
         width: calc(100% - 40px);
       }
 
-      code, 
+      code,
       blockquote {
-        background-color: var(--bg-color) !important;
+        background-color: var(--pre-bg) !important;
         width: calc(100% - 50px);
         padding: 0.2em 1em 0.2em 1em;
         margin-left: 0px;
@@ -184,18 +343,18 @@ main {
 
       pre>code{
         background-color: transparent !important;
-        color: var(--font-color);
+        color: var(--fg);
       }
 
       code {
         font-size: 1.2em;
         padding: 0.2em;
-        background-color: #b7c2fd40 !important;
-        color: #b7c2fd;
+        background-color: var(--code-bg) !important;
+        color: var(--code-fg);
       }
-      
+
       blockquote::before {
-        background-color: #82aaff;
+        background-color: var(--blockquote-bar);
         width: 3.5px;
         display: block;
         position: absolute;
@@ -208,10 +367,10 @@ main {
       ul.section a,
       ul.section li,
       ul.section a::before {
-        color: var(--font-color);
+        color: var(--fg);
         text-decoration: none;
         list-style-type: none;
-        content: ' ';
+        content: ' ';
       }
 
       li.section a::before {
@@ -221,24 +380,24 @@ main {
       h1,
       a,
       a::before {
-        color: #82aaff;
-        content: '󰌹 ';
+        color: var(--accent);
+        content: ' ';
       }
 
       h1::before {
-        content: '󰲡 ';
+        content: ' ';
       }
 
       h2,
       h2::before {
-        color: #ffc777;
-        content: ' 󰲣 ';
+        color: var(--accent2);
+        content: '  ';
       }
 
       h3,
       h3::before {
-        color: #c3e88d;
-        content: '  󰲥 ';
+        color: var(--accent3);
+        content: '   ';
       }
     }
 
@@ -249,7 +408,7 @@ main {
     .tab {
       width: 100%;
       height: 22px;
-      box-shadow: 0px 3px 0px 0px var(--font-color);
+      box-shadow: 0px 3px 0px 0px var(--border);
       overflow-x: scroll;
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -270,11 +429,11 @@ main {
 
         li:hover,
         .selected {
-          background-color: rgba(66, 135, 245, 0.5) !important;
+          background-color: var(--selected-bg) !important;
         }
 
         li:not(.selected) a {
-          color: rgb(205, 214, 244, 0.5);
+          color: var(--fg-dim);
         }
 
         a:hover {
@@ -287,13 +446,13 @@ main {
           white-space: nowrap;
           width: 50px;
           display: block;
-          color: white;
+          color: var(--fg);
         }
 
         li {
           padding: 0px 12px 0px 15px;
-          box-shadow: -3px 0px 0px 0px var(--font-color) inset;
-          color: rgba(205, 214, 244, 0.6) !important;
+          box-shadow: -3px 0px 0px 0px var(--border) inset;
+          color: var(--fg-dim) !important;
           display: inherit;
         }
       }
@@ -334,7 +493,7 @@ main {
     }
 
     a {
-      color: var(--font-color);
+      color: var(--fg);
     }
   }
 
@@ -343,7 +502,7 @@ main {
     position: relative;
     bottom: 0;
     height: 30px;
-    box-shadow: 0px -3px 0px 0px var(--font-color);
+    box-shadow: 0px -3px 0px 0px var(--border);
 
     font-size: 10px;
     width: 100%;
@@ -352,7 +511,7 @@ main {
     .cursor {
       opacity: 0.6;
       width: 12px;
-      background-color: #fff;
+      background-color: var(--fg);
       margin-top: 1ex;
       margin-bottom: 1ex;
       position: relative;
@@ -391,9 +550,9 @@ footer>p {
     gap: 18px 32px;
     padding: 16px 24px;
     pointer-events: auto;
-    background: rgba(44, 44, 58, 0.72);
+    background: var(--whichkey-bg);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(130, 170, 255, 0.15);
+    border: 1px solid var(--border-dim);
     border-radius: 8px;
     max-width: 75vw;
     max-height: 55vh;
@@ -405,12 +564,12 @@ footer>p {
   }
 
   .wk-group-name {
-    color: #82aaff;
+    color: var(--accent);
     font-weight: bold;
     font-size: 1em;
     margin-bottom: 6px;
     padding-bottom: 4px;
-    border-bottom: 1px solid rgba(130, 170, 255, 0.25);
+    border-bottom: 1px solid var(--border-dim-solid);
   }
 
   .wk-row {
@@ -421,23 +580,23 @@ footer>p {
   }
 
   .wk-key {
-    color: #ffc777;
+    color: var(--accent2);
     min-width: 5em;
     font-weight: bold;
     white-space: nowrap;
   }
 
   .wk-desc {
-    color: #cdd6f4;
+    color: var(--fg);
   }
 
   .wk-footer {
     width: 100%;
     text-align: center;
-    color: rgba(205, 214, 244, 0.4);
+    color: var(--fg-dimmer);
     font-size: 0.8em;
     padding-top: 8px;
-    border-top: 1px solid rgba(130, 170, 255, 0.15);
+    border-top: 1px solid var(--border-dim);
   }
 }
 
